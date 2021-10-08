@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/main/src/web/blog",
+	"sourceRoot": "/home/main/src/web/hugo_blog",
 	"sources": [
 		"stdin"
 	],
