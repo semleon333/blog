@@ -5,15 +5,44 @@
     <link>http://example.org/blog/</link>
     <description>Recent content on Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 08 Oct 2021 11:06:27 +0300</lastBuildDate><atom:link href="http://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test</title>
-      <link>http://example.org/blog/posts/test/</link>
-      <pubDate>Fri, 08 Oct 2021 11:06:27 +0300</pubDate>
+      <title></title>
+      <link>http://example.org/blog/posts/arch/arch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/blog/posts/test/</guid>
-      <description>TEST TEST TEST</description>
+      <guid>http://example.org/blog/posts/arch/arch/</guid>
+      <description>Arch Install dhcpcd?
+Reboot  Enable network
+ systemctl start systemd-networkd.service systemctl enable systemd-networkd.service  /etc/systemd/network/20-wired.network
+ [Match] Name=enp1s0 [Network] DHCP=yes  time
+ timedatectl set-timezone Europe/Moscow timedatectl set-ntp true hwclock --systohc --localtime  locale
+ localectl set-locale LANG=en_GB.UTF-8 locale-gen install zsh+ohmyzsh  set new shell
+ #list paths chsh -l #set shell chsh -s path_to_shell  install ohmyzsh
+ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;quot; </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/blog/posts/hugo/hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/posts/hugo/hugo/</guid>
+      <description>HUGO  create site_folder
+ hugo new site sitename cd sitename git init git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke  create new post
+ hugo new posts/post.md  static page gen
+ hugo server -D </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/blog/posts/luks/luks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/posts/luks/luks/</guid>
+      <description>Create cryptopartition 2 step boot LUKS cruptsetup -y luksFormat /dev/sdXY cryptsetup open /dev/sdXY new_name #new_name -&amp;gt; name_from_cruptsetup mkfs.btrfs /dev/mapper/name_from_cruptsetup #create file for key dd if=/dev/random bs=32 count=1 of=&amp;lt;filename&amp;gt; #write key into file cryptsetup luksAddKey /dev/&amp;lt;&amp;gt; ./keyfile  /etc/crypttab
+ #name in mapper	device	key-file	type name_from_cruptsetup	UUID=&amp;lt;LUKS&amp;gt;	/etc/key_file_name	luks  /etc/fstab
+ /etc/mapper/HOME </description>
     </item>
     
   </channel>

@@ -101,12 +101,54 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/blog/posts/test/" class="link black dim">
-        Test
+      <a href="/blog/posts/arch/arch/" class="link black dim">
+        
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      TEST TEST TEST
+      Arch Install dhcpcd?
+Reboot  Enable network
+ systemctl start systemd-networkd.service systemctl enable systemd-networkd.service  /etc/systemd/network/20-wired.network
+ [Match] Name=enp1s0 [Network] DHCP=yes  time
+ timedatectl set-timezone Europe/Moscow timedatectl set-ntp true hwclock --systohc --localtime  locale
+ localectl set-locale LANG=en_GB.UTF-8 locale-gen install zsh+ohmyzsh  set new shell
+ #list paths chsh -l #set shell chsh -s path_to_shell  install ohmyzsh
+ sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/posts/hugo/hugo/" class="link black dim">
+        
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      HUGO  create site_folder
+ hugo new site sitename cd sitename git init git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke  create new post
+ hugo new posts/post.md  static page gen
+ hugo server -D 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/posts/luks/luks/" class="link black dim">
+        
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Create cryptopartition 2 step boot LUKS cruptsetup -y luksFormat /dev/sdXY cryptsetup open /dev/sdXY new_name #new_name -&gt; name_from_cruptsetup mkfs.btrfs /dev/mapper/name_from_cruptsetup #create file for key dd if=/dev/random bs=32 count=1 of=&lt;filename&gt; #write key into file cryptsetup luksAddKey /dev/&lt;&gt; ./keyfile  /etc/crypttab
+ #name in mapper	device	key-file	type name_from_cruptsetup	UUID=&lt;LUKS&gt;	/etc/key_file_name	luks  /etc/fstab
+ /etc/mapper/HOME 
     </div>
   </div>
 </div>
