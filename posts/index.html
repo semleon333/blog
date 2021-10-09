@@ -106,14 +106,8 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Arch Install dhcpcd?
-Reboot  Enable network
- systemctl start systemd-networkd.service systemctl enable systemd-networkd.service  /etc/systemd/network/20-wired.network
- [Match] Name=enp1s0 [Network] DHCP=yes  time
- timedatectl set-timezone Europe/Moscow timedatectl set-ntp true hwclock --systohc --localtime  locale
- localectl set-locale LANG=en_GB.UTF-8 locale-gen install zsh+ohmyzsh  set new shell
- #list paths chsh -l #set shell chsh -s path_to_shell  install ohmyzsh
- sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; 
+      Arch Install fdisk /dev/the_disk_to_be_partitioned w - &quot;save&quot; n - create partition(without filesystem) mkfs.btrfs /dev/root_partition mount /dev/root_partition /mnt mkfs.vfat /dev/boot_partition #mount boot_partition to boot or efi in system mount /dev/root_partition /mnt/boot mkswap /dev/swap_partition #install base files pacstrap /mnt base linux linux-firmware #generating file for boot system genfstab -U /mnt &gt;&gt; /mnt/etc/fstab Into Arch arch-chroot /mnt  Enable network
+ systemctl enable systemd-networkd.service #install and run dhcpcd pacman -S dhcpcd  /etc/systemd/network/20-wired.network
     </div>
   </div>
 </div>
@@ -146,9 +140,36 @@ Reboot  Enable network
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Create cryptopartition 2 step boot LUKS cruptsetup -y luksFormat /dev/sdXY cryptsetup open /dev/sdXY new_name #new_name -&gt; name_from_cruptsetup mkfs.btrfs /dev/mapper/name_from_cruptsetup #create file for key dd if=/dev/random bs=32 count=1 of=&lt;filename&gt; #write key into file cryptsetup luksAddKey /dev/&lt;&gt; ./keyfile  /etc/crypttab
+      Create cryptopartition 2 step boot LUKS  /etc/mkinitcpio.conf
+ #in HOOKS=() add encrypt cruptsetup -y luksFormat /dev/sdXY cryptsetup open /dev/sdXY new_name #new_name -&gt; name_from_cruptsetup mkfs.btrfs /dev/mapper/name_from_cruptsetup #create file for key dd if=/dev/random bs=32 count=1 of=&lt;filename&gt; #write key into file cryptsetup luksAddKey /dev/&lt;&gt; ./keyfile  /etc/crypttab
  #name in mapper	device	key-file	type name_from_cruptsetup	UUID=&lt;LUKS&gt;	/etc/key_file_name	luks  /etc/fstab
  /etc/mapper/HOME 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/posts/soft/soft/" class="link black dim">
+        
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      SOFT   zsh
+  ohmyzsh
+ sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;    man
+  neovim -&gt; nvim
+  numlockx ?
+  ranger
+ w3m ffmpegthumbnailer    p7zip -&gt; 7z
+  mplayer
+  ripgrep -&gt; rg
+  screenshot
+ flameshot  flameshot full -c -p /home/main/ss flameshot gui -c -p /home/main/ss      wallpaper
+ nitrogen  .
     </div>
   </div>
 </div>

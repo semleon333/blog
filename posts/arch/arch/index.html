@@ -6,14 +6,8 @@
     
     <title>Site</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Arch Install dhcpcd?
-Reboot  Enable network
- systemctl start systemd-networkd.service systemctl enable systemd-networkd.service  /etc/systemd/network/20-wired.network
- [Match] Name=enp1s0 [Network] DHCP=yes  time
- timedatectl set-timezone Europe/Moscow timedatectl set-ntp true hwclock --systohc --localtime  locale
- localectl set-locale LANG=en_GB.UTF-8 locale-gen install zsh&#43;ohmyzsh  set new shell
- #list paths chsh -l #set shell chsh -s path_to_shell  install ohmyzsh
- sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; ">
+    <meta name="description" content="Arch Install fdisk /dev/the_disk_to_be_partitioned w - &quot;save&quot; n - create partition(without filesystem) mkfs.btrfs /dev/root_partition mount /dev/root_partition /mnt mkfs.vfat /dev/boot_partition #mount boot_partition to boot or efi in system mount /dev/root_partition /mnt/boot mkswap /dev/swap_partition #install base files pacstrap /mnt base linux linux-firmware #generating file for boot system genfstab -U /mnt &gt;&gt; /mnt/etc/fstab Into Arch arch-chroot /mnt  Enable network
+ systemctl enable systemd-networkd.service #install and run dhcpcd pacman -S dhcpcd  /etc/systemd/network/20-wired.network">
     <meta name="generator" content="Hugo 0.88.1" />
     
     
@@ -34,40 +28,22 @@ Reboot  Enable network
     
     
     <meta property="og:title" content="" />
-<meta property="og:description" content="Arch Install dhcpcd?
-Reboot  Enable network
- systemctl start systemd-networkd.service systemctl enable systemd-networkd.service  /etc/systemd/network/20-wired.network
- [Match] Name=enp1s0 [Network] DHCP=yes  time
- timedatectl set-timezone Europe/Moscow timedatectl set-ntp true hwclock --systohc --localtime  locale
- localectl set-locale LANG=en_GB.UTF-8 locale-gen install zsh&#43;ohmyzsh  set new shell
- #list paths chsh -l #set shell chsh -s path_to_shell  install ohmyzsh
- sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; " />
+<meta property="og:description" content="Arch Install fdisk /dev/the_disk_to_be_partitioned w - &quot;save&quot; n - create partition(without filesystem) mkfs.btrfs /dev/root_partition mount /dev/root_partition /mnt mkfs.vfat /dev/boot_partition #mount boot_partition to boot or efi in system mount /dev/root_partition /mnt/boot mkswap /dev/swap_partition #install base files pacstrap /mnt base linux linux-firmware #generating file for boot system genfstab -U /mnt &gt;&gt; /mnt/etc/fstab Into Arch arch-chroot /mnt  Enable network
+ systemctl enable systemd-networkd.service #install and run dhcpcd pacman -S dhcpcd  /etc/systemd/network/20-wired.network" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/blog/posts/arch/arch/" /><meta property="article:section" content="posts" />
 
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="Arch Install dhcpcd?
-Reboot  Enable network
- systemctl start systemd-networkd.service systemctl enable systemd-networkd.service  /etc/systemd/network/20-wired.network
- [Match] Name=enp1s0 [Network] DHCP=yes  time
- timedatectl set-timezone Europe/Moscow timedatectl set-ntp true hwclock --systohc --localtime  locale
- localectl set-locale LANG=en_GB.UTF-8 locale-gen install zsh&#43;ohmyzsh  set new shell
- #list paths chsh -l #set shell chsh -s path_to_shell  install ohmyzsh
- sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; ">
+<meta itemprop="description" content="Arch Install fdisk /dev/the_disk_to_be_partitioned w - &quot;save&quot; n - create partition(without filesystem) mkfs.btrfs /dev/root_partition mount /dev/root_partition /mnt mkfs.vfat /dev/boot_partition #mount boot_partition to boot or efi in system mount /dev/root_partition /mnt/boot mkswap /dev/swap_partition #install base files pacstrap /mnt base linux linux-firmware #generating file for boot system genfstab -U /mnt &gt;&gt; /mnt/etc/fstab Into Arch arch-chroot /mnt  Enable network
+ systemctl enable systemd-networkd.service #install and run dhcpcd pacman -S dhcpcd  /etc/systemd/network/20-wired.network">
 
-<meta itemprop="wordCount" content="53">
+<meta itemprop="wordCount" content="180">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Arch Install dhcpcd?
-Reboot  Enable network
- systemctl start systemd-networkd.service systemctl enable systemd-networkd.service  /etc/systemd/network/20-wired.network
- [Match] Name=enp1s0 [Network] DHCP=yes  time
- timedatectl set-timezone Europe/Moscow timedatectl set-ntp true hwclock --systohc --localtime  locale
- localectl set-locale LANG=en_GB.UTF-8 locale-gen install zsh&#43;ohmyzsh  set new shell
- #list paths chsh -l #set shell chsh -s path_to_shell  install ohmyzsh
- sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; "/>
+<meta name="twitter:description" content="Arch Install fdisk /dev/the_disk_to_be_partitioned w - &quot;save&quot; n - create partition(without filesystem) mkfs.btrfs /dev/root_partition mount /dev/root_partition /mnt mkfs.vfat /dev/boot_partition #mount boot_partition to boot or efi in system mount /dev/root_partition /mnt/boot mkswap /dev/swap_partition #install base files pacstrap /mnt base linux linux-firmware #generating file for boot system genfstab -U /mnt &gt;&gt; /mnt/etc/fstab Into Arch arch-chroot /mnt  Enable network
+ systemctl enable systemd-networkd.service #install and run dhcpcd pacman -S dhcpcd  /etc/systemd/network/20-wired.network"/>
 
 	
   </head>
@@ -165,13 +141,31 @@ Reboot  Enable network
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="arch">Arch</h1>
 <h1 id="install">Install</h1>
-<p>dhcpcd?</p>
-<h2 id="reboot">Reboot</h2>
-<blockquote>
+<pre tabindex="0"><code>fdisk /dev/the_disk_to_be_partitioned
+	w - &quot;save&quot;
+	n - create partition(without filesystem)
+
+
+</code></pre><pre tabindex="0"><code>mkfs.btrfs /dev/root_partition
+mount /dev/root_partition /mnt
+
+mkfs.vfat /dev/boot_partition
+#mount boot_partition to boot or efi in system
+mount /dev/root_partition /mnt/boot
+
+mkswap /dev/swap_partition
+</code></pre><pre tabindex="0"><code>#install base files
+pacstrap /mnt base linux linux-firmware
+</code></pre><pre tabindex="0"><code>#generating file for boot system
+genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre><h3 id="into-arch">Into Arch</h3>
+<pre tabindex="0"><code>arch-chroot /mnt
+</code></pre><blockquote>
 <p>Enable network</p>
 </blockquote>
-<pre tabindex="0"><code>systemctl start systemd-networkd.service
-systemctl enable systemd-networkd.service
+<pre tabindex="0"><code>systemctl enable systemd-networkd.service
+</code></pre><pre tabindex="0"><code>#install and run dhcpcd
+pacman -S dhcpcd
 </code></pre><blockquote>
 <p>/etc/systemd/network/20-wired.network</p>
 </blockquote>
@@ -189,8 +183,19 @@ hwclock --systohc --localtime
 </code></pre><blockquote>
 <p>locale</p>
 </blockquote>
-<pre tabindex="0"><code>localectl set-locale LANG=en_GB.UTF-8
-locale-gen
+<pre tabindex="0"><code>#localectl set-locale LANG=en_GB.UTF-8
+</code></pre><blockquote>
+<p>in /etc/locale.gen uncomment</p>
+</blockquote>
+<pre tabindex="0"><code>en_US.UTF-8 UTF-8
+</code></pre><pre tabindex="0"><code>locale-gen
+</code></pre><pre tabindex="0"><code>exit
+reboot
+</code></pre><hr>
+<h2 id="reboot">Reboot</h2>
+<hr>
+<pre tabindex="0"><code>if network not runned
+systemctl start systemd-networkd.service
 </code></pre><h2 id="install-zshohmyzsh">install zsh+ohmyzsh</h2>
 <blockquote>
 <p>set new shell</p>
@@ -204,6 +209,39 @@ chsh -s path_to_shell
 <p>install ohmyzsh</p>
 </blockquote>
 <pre tabindex="0"><code>sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+</code></pre><h1 id="dm-lockscreen">DM lockscreen</h1>
+<pre tabindex="0"><code>#warning! tty switch abuse (ctrl+alt+F1-8)
+- lightdm
+	- lightdm-slick-greeter
+		&gt;/etc/lightdm/lightdm.conf
+		```
+		[Seat:*]
+		...
+		greeter-session=lightdm-slick-greeter
+		...
+		```
+</code></pre><h1 id="pacman">Pacman</h1>
+<blockquote>
+<p>conf</p>
+</blockquote>
+<p>/etc/pacman.conf</p>
+<pre tabindex="0"><code>-v - verbose
+</code></pre><pre tabindex="0"><code>-S
+	-s - search
+	-
+</code></pre><pre tabindex="0"><code>-R
+	-с - dependencies
+	-n - remove configs
+	-s - dependencies
+</code></pre><pre tabindex="0"><code>-Q
+	-e - explicitly installed
+	
+</code></pre><blockquote>
+<p>recomended</p>
+</blockquote>
+<pre tabindex="0"><code>-Syu - for update/apgrade
+-R - remove
+-D - list installed packages
 </code></pre><ul class="pa0">
   
 </ul>

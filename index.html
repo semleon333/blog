@@ -133,14 +133,8 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Arch Install dhcpcd?
-Reboot  Enable network
- systemctl start systemd-networkd.service systemctl enable systemd-networkd.service  /etc/systemd/network/20-wired.network
- [Match] Name=enp1s0 [Network] DHCP=yes  time
- timedatectl set-timezone Europe/Moscow timedatectl set-ntp true hwclock --systohc --localtime  locale
- localectl set-locale LANG=en_GB.UTF-8 locale-gen install zsh+ohmyzsh  set new shell
- #list paths chsh -l #set shell chsh -s path_to_shell  install ohmyzsh
- sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot; 
+          Arch Install fdisk /dev/the_disk_to_be_partitioned w - &quot;save&quot; n - create partition(without filesystem) mkfs.btrfs /dev/root_partition mount /dev/root_partition /mnt mkfs.vfat /dev/boot_partition #mount boot_partition to boot or efi in system mount /dev/root_partition /mnt/boot mkswap /dev/swap_partition #install base files pacstrap /mnt base linux linux-firmware #generating file for boot system genfstab -U /mnt &gt;&gt; /mnt/etc/fstab Into Arch arch-chroot /mnt  Enable network
+ systemctl enable systemd-networkd.service #install and run dhcpcd pacman -S dhcpcd  /etc/systemd/network/20-wired.network
         </div>
           <a href="/blog/posts/arch/arch/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
@@ -191,7 +185,8 @@ Reboot  Enable network
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Create cryptopartition 2 step boot LUKS cruptsetup -y luksFormat /dev/sdXY cryptsetup open /dev/sdXY new_name #new_name -&gt; name_from_cruptsetup mkfs.btrfs /dev/mapper/name_from_cruptsetup #create file for key dd if=/dev/random bs=32 count=1 of=&lt;filename&gt; #write key into file cryptsetup luksAddKey /dev/&lt;&gt; ./keyfile  /etc/crypttab
+          Create cryptopartition 2 step boot LUKS  /etc/mkinitcpio.conf
+ #in HOOKS=() add encrypt cruptsetup -y luksFormat /dev/sdXY cryptsetup open /dev/sdXY new_name #new_name -&gt; name_from_cruptsetup mkfs.btrfs /dev/mapper/name_from_cruptsetup #create file for key dd if=/dev/random bs=32 count=1 of=&lt;filename&gt; #write key into file cryptsetup luksAddKey /dev/&lt;&gt; ./keyfile  /etc/crypttab
  #name in mapper	device	key-file	type name_from_cruptsetup	UUID=&lt;LUKS&gt;	/etc/key_file_name	luks  /etc/fstab
  /etc/mapper/HOME 
         </div>
@@ -206,6 +201,23 @@ Reboot  Enable network
         
       </section>
 
+      
+      <section class="w-100">
+        <h1 class="f3">More</h1>
+        
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/blog/posts/soft/soft/" class="link black dim">
+              
+            </a>
+          </h2>
+        
+
+        
+        
+          <a href="/blog/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
+        
+        </section>
       
 
       </div>
